@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/admin','Admin\IndexController@index')->name('admin.index');
+Route::get('/admin/test','Admin\IndexController@test')->name('admin.test');
+
