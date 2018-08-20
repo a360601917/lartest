@@ -1,5 +1,5 @@
 
-@include('admin.layouts.mate',['title'=>'aaa'])
+@include('admin.layouts.mate')
 
 
 @yield('content')

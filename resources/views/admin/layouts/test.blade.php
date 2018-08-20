@@ -1,5 +1,5 @@
 
-@extends('admin.layouts.app',['title'=>'aaaa'])
+@extends('admin.layouts.app')
 
 @section('title', 'test页')
 
