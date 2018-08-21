@@ -17,6 +17,10 @@
 
 Route::resource('user','UserController');
 
+Route::post('login','LoginController@store')->name('login.store');
+
+
+
 Route::get('admin','Admin\IndexController@index')->name('admin.index');
 Route::get('admin/test','Admin\IndexController@test')->name('admin.test');
 
