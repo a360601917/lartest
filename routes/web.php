@@ -17,10 +17,19 @@
 
 Route::resource('user','UserController');
 
+Route::get('login','LoginController@index')->name('login.index');
 Route::post('login','LoginController@store')->name('login.store');
 
 
+Route::group(['namespace'=>'admin','prefix'=>'admin'],function(){
+  
+  Route::get('login','LoginController@index')->name('admin.login');
+  Route::post('login','LoginController@store')->name('admin.login.store');
+  
+  Route::get('','IndexController@index')->name('admin.index');
+  Route::get('test','IndexController@test')->name('admin.test');
+  
+});
 
-Route::get('admin','Admin\IndexController@index')->name('admin.index');
-Route::get('admin/test','Admin\IndexController@test')->name('admin.test');
+
 
