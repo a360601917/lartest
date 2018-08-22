@@ -26,7 +26,16 @@
             <ul class="dropDown-menu menu radius box-shadow">
               <li><a href="javascript:;" onClick="myselfinfo()">个人信息</a></li>
               <li><a href="#">切换账户</a></li>
-              <li><a href="#">退出</a></li>
+              <li>
+                <!--
+                <a href="#">退出</a>
+                -->
+                <form action="<?=route('admin.login.destroy')?>" method="post">
+                  <?= method_field('delete')?>
+                  <?= csrf_field()?>
+                  <input type="submit" value="退出"/>
+                </form>
+              </li>
             </ul>
           </li>
           <li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
