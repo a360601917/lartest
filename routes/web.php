@@ -15,6 +15,8 @@
 //    return view('welcome');
 //});
 
+Route::get('test','TestController@test')->name('test');
+
 Route::resource('user','UserController');
 
 //Route::get('login','LoginController@index')->name('login.index');
