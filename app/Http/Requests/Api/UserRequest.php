@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests\Api;
 
-use Illuminate\Foundation\Http\FormRequest;
+//use Illuminate\Foundation\Http\FormRequest;
 
 class UserRequest extends FormRequest {
 
@@ -15,16 +15,17 @@ class UserRequest extends FormRequest {
     switch ($this->method()) {
       case 'POST':
         return [
-            'username' => 'required|min:5|max:20',
+            'name' => 'min:5|max:20',
             'password' => 'required|min:6|max:30',
-            'code'=>'required',
+            //'code'=>'required',
+            //'phone'=>'',
         ];
     }
   }
 
   public function messages() {
     return [
-        'username.required'=>'用户名不能为空',
+        //'name.required'=>'用户名不能为空',
         'password.required'=>'用户名不能为空',
     ];
   }
