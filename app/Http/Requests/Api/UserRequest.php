@@ -15,10 +15,10 @@ class UserRequest extends FormRequest {
     switch ($this->method()) {
       case 'POST':
         return [
-            'name' => 'min:5|max:20',
+            'name' => 'between:5,6|unique:users',
             'password' => 'required|min:6|max:30',
-            //'code'=>'required',
-            //'phone'=>'',
+            'verify_code'=>'filled',
+            'phone'=>'regex:/^\d{6,}$/|unique:users',
         ];
     }
   }

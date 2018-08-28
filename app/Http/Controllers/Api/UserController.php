@@ -17,11 +17,12 @@ class UserController extends Controller {
 
     if ($phone = $request->phone) {
       $key = $request->key;
-      $code = $request->code;
+      $verify_code = $request->verify_code;
       $verify_data = Cache::get($key) or $this->response->error('验证码失效', 422);
-      hash_equals($code, $verify_data->code) or $this->response->errorUnauthorized('验证码不正确');
+      ($verify_code==$verify_data['verify_code']) or $this->response->errorUnauthorized('验证码不正确');
       Cache::forget($key);
       $data['phone'] = $phone;
+      $data['name']=$request->name?:$phone;
     } elseif ($name = $request->name) {
       $data['name'] = $name;
     } elseif ($email = $request->email) {
@@ -35,7 +36,7 @@ class UserController extends Controller {
         'expires_in'=>\Auth::guard('api')->factory()->getTTL() * 60
     ];
 
-    $this->response->item($user,new UserTransformer())->setMeta($mate)->setStatusCode(201);
+    return $this->response->item($user,new UserTransformer())->setMeta($mate)->setStatusCode(201);
   }
 
 }

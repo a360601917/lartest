@@ -17,7 +17,7 @@ class VerifyCodeRequest extends FormRequest
       $method= $this->method();
       if($method=='POST')
         return [
-            'phone'=>'required|unique:users|regex:/^\d{6,}$/',
+            'phone'=>'required|regex:/^\d{6,}$/',
         ];
     }
     public function messages() {

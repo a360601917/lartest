@@ -25,7 +25,7 @@ class SendSmsHandler {
       
       $key= $this->key.str_random(10);
       $time=$time?:now()->addMinutes(10);
-      Cache::put($key . $phone, ['code' => $code, 'phone' => $phone], $time);
+      Cache::put($key, ['verify_code' => $code, 'phone' => $phone], $time);
       return $key;
     } catch (\Overtrue\EasySms\Exceptions\NoGatewayAvailableException $exception) {
       $message = $exception->getException('aliyun')->getMessage();

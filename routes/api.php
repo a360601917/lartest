@@ -19,6 +19,10 @@ use Illuminate\Http\Request;
 $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', ['namespace' => 'App\Http\Controllers\Api', 'middleware' => 'serializer:array'], function($api) {
-  $api->post('verifyCode', 'VerifyCodeController@store')->name('api.verifyCode.store');
-  $api->post('user', 'UserController@store')->name('api.user.store');
+
+  $api->group(['middleware' => 'api.throttle', 'limit' => 10, 'expires' => 1], function($api) {
+    $api->post('verifyCode', 'VerifyCodeController@store')->name('api.verifyCode.store');
+    $api->post('user', 'UserController@store')->name('api.user.store');
+  });
+  
 });
