@@ -11,7 +11,17 @@ use Illuminate\Support\Facades\Cache;
 class VerifyCodeController extends Controller {
 
   public function store(VerifyCodeRequest $request, SendSmsHandler $sms) {
-    $phone = $request->phone;
+    $captcha_key=$request->captcha_key;
+    if($cache_data=Cache::get($captcha_key)){
+      return $this->response->error('验证码过期', 422);
+    }
+    
+    $phone=$cache_data['phone'];
+    if($cache_data['captcha_code']!=$request->captcha_code){
+      Cache::forget($captcha_key);
+      return $this->response->errorUnauthorized('验证不正确');
+    }
+    //$phone = $request->phone;
     $expired_at = now()->addMinutes(30);
     $key = $sms->code($phone, $expired_at);
 

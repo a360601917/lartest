@@ -17,7 +17,9 @@ class VerifyCodeRequest extends FormRequest
       $method= $this->method();
       if($method=='POST')
         return [
-            'phone'=>'required|regex:/^\d{6,}$/',
+            'phone'=>'regex:/^\d{6,}$/',
+            'captcha_key'=>'required',
+            'captcha_code'=>'required'
         ];
     }
     public function messages() {
