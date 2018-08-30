@@ -30,8 +30,8 @@ class AuthorizationsController extends Controller {
     return $this->response->array($data);
   }
 
-  public function update() {
-    $token = Auth::guard('api')->refresh();
+  public function update(AuthorizationsRequest $request) {
+    $token = Auth::guard('api')->refresh($request->token);
     return $this->returnToken($token);
   }
 
