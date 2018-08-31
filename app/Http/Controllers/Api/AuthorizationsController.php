@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 //use App\Http\Controllers\Controller;
 use Auth;
 use App\Http\Requests\Api\AuthorizationsRequest;
+use App\Http\Requests\Api\SocialAuthorizationRequest;
 
 class AuthorizationsController extends Controller {
 
@@ -18,6 +19,14 @@ class AuthorizationsController extends Controller {
     }
     $token = Auth::guard('api')->attempt($user_data) or $this->response->errorUnauthorized('用户名或密码错误');
     return $this->returnToken($token)->setStatusCode(201);
+  }
+  
+  public function socialStore($type,SocialAuthorizationRequest $request){
+    if(!in_array($type, ['weixin'])){
+      return $this->response->errorBadRequest();
+    }
+    $driver=\Socialite::driver($type);
+    ///////////////////////////
   }
 
   public function returnToken($token) {

@@ -22,17 +22,19 @@ $api->version('v1', ['namespace' => 'App\Http\Controllers\Api', 'middleware' => 
 
   $api->group(['middleware' => 'api.throttle', 'limit' => 10, 'expires' => 1], function($api) {
     //图片难证码
-    $api->post('captchas','CaptchasController@store')->name('api.captchas.store');
+    $api->post('captchas', 'CaptchasController@store')->name('api.captchas.store');
     //验证码
     $api->post('verifyCode', 'VerifyCodeController@store')->name('api.verifyCode.store');
     //注删
     $api->post('user', 'UserController@store')->name('api.user.store');
     //刷新token
-    $api->put('authorizations/update','AuthorizationsController@update')->name('api.authorizations.update');
+    $api->put('authorizations/update', 'AuthorizationsController@update')->name('api.authorizations.update');
     //删除token
-    $api->delete('authorizations/delete','AuthorizationsController@delete')->name('api.authorizations.delete');
+    $api->delete('authorizations/delete', 'AuthorizationsController@delete')->name('api.authorizations.delete');
     //登陆
-    $api->post('authorizations','AuthorizationsController@store')->name('api.authorizations.store');
+    $api->post('authorizations', 'AuthorizationsController@store')->name('api.authorizations.store');
+    // 第三方登录
+    $api->post('socials/{social_type}/authorizations', 'AuthorizationsController@socialStore')
+            ->name('api.socials.authorizations.store');
   });
-  
 });
