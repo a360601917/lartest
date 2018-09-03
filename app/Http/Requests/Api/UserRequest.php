@@ -16,7 +16,7 @@ class UserRequest extends FormRequest {
       case 'POST':
         return [
             'name' => 'min:5|unique:users',
-            'password' => 'required|min:6|max:30',
+            //'password' => 'required|min:6|max:30',
             'verify_code'=>'filled',
             'phone'=>'regex:/^\d{6,}$/|unique:users',
         ];

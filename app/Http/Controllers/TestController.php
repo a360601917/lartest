@@ -10,13 +10,7 @@ use Illuminate\Support\Facades\Cache;
 class TestController extends Controller {
 
   public function test(SendSmsHandler $sendSms, Request $request) {
-    if ($request->phone) {
-
-      $a = Cache::get($sendSms->key.$request->phone);
-      dd($a);
-    }
-    //$sendSms->code(15976816006); //dd('aaa');
-    //dd($sendSms->error);
+    return bcrypt(6008);
   }
 
 }
