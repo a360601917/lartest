@@ -15,13 +15,15 @@ class CreateGoodsTable extends Migration
     {
         Schema::create('goods', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('sku')->nullable(true);
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('category_child_id');
             $table->string('title')->index();
-            $table->string('etitle')->nullable->index();
+            $table->string('etitle')->nullable(true)->index();
             $table->string('image')->nullable(true);
             $table->decimal('price',10,2);
             $table->text('describe')->nullable(true);
+            $table->unsignedInteger('sort');
         });
     }
 
