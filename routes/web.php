@@ -16,6 +16,7 @@
 //});
 
 Route::get('test','TestController@test')->name('test');
+Route::post('test','TestController@store')->name('test.store');
 
 Route::resource('user','UserController');
 
