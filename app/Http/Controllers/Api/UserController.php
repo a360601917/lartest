@@ -26,15 +26,15 @@ class UserController extends Controller {
       }
 
       $data['phone'] = $verify_data['phone'];
-      $data['name'] = $request->name ?: $data['phone'];
-      $data['password']=bcrypt(substr($data['phone'],-4));
+      $data['name'] = $request->name ?? $data['phone'];
+      $data['password'] = bcrypt(substr($data['phone'], -4));
     } elseif ($name = $request->name) {
       $data['name'] = $name;
     } elseif ($email = $request->email) {
       $data['email'] = $email;
     }
 
-    $data['password'] =$data['password']?: bcrypt($request->password);
+    $data['password'] = $data['password'] ?? bcrypt($request->password);
     $user = User::create($data);
 
     $mate = [
