@@ -16,7 +16,7 @@ class CartRequest extends FormRequest
     public function rules()
     {
       switch ($this->method()){
-        case 'POSE':
+        case 'POST':
           $rule=[
               'carts'=>'required_without:goods_id|json',
               //'user_id'=>'required_without:carts|numeric',
@@ -25,6 +25,7 @@ class CartRequest extends FormRequest
           ];
           break;
       }
+      return $rule;
 
     }
 }
