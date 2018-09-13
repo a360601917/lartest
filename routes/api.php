@@ -59,7 +59,7 @@ $api->version('v1', ['namespace' => 'App\Http\Controllers\Api', 'middleware' => 
     
     //须登陆
     $api->group(['middleware'=>'api.auth'],function($api){
-
+      $api->resource('cart','CartController');
     });
     
   });

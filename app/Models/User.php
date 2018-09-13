@@ -36,5 +36,9 @@ class User extends Authenticatable implements JWTSubject {
   protected $hidden = [
       'password', 'remember_token',
   ];
+  
+  public function tokenId(){
+    return auth('api')->payload()->get('sub');
+  }
 
 }

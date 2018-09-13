@@ -15,8 +15,8 @@ class CategoryTransformer extends TransformerAbstract {
         'name' => $category->name,
         'pid' => $category->pid,
         'sort' => $category->sort,
-        'created_at' => !$category->created_at ?: $category->created_at->toDateTimeString(),
-        'updated_at' => !$category->updated_at ?: $category->updated_at->toDateTimeString(),
+        'created_at' => !$category->created_at ?? $category->created_at->toDateTimeString(),
+        'updated_at' => !$category->updated_at ?? $category->updated_at->toDateTimeString(),
     ];
   }
   
