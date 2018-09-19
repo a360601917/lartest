@@ -2,19 +2,11 @@
 
 namespace App\Http\Requests\Api;
 
-use Illuminate\Foundation\Http\FormRequest;
+//use Illuminate\Foundation\Http\FormRequest;
 
 class OrderRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
-    {
-        return false;
-    }
+
 
     /**
      * Get the validation rules that apply to the request.
@@ -24,7 +16,9 @@ class OrderRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'goods'=>'required|json',
+            'address_id'=>'numeric|min:1',
+            
         ];
     }
 }

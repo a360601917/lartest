@@ -18,8 +18,8 @@ class CreateOrdersTable extends Migration
             $table->unsignedInteger('user_id');
             $table->text('goods');
             $table->decimal('money',10,2);
-            $table->boolean('pay');
-            $table->timestamp('pay_at');
+            $table->boolean('pay')->default(0);
+            $table->timestamp('pay_at')->nullable(TRUE);
             $table->text('address');
             $table->timestamps();
         });
