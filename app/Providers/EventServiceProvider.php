@@ -16,6 +16,9 @@ class EventServiceProvider extends ServiceProvider {
       'App\Events\Event' => [
           'App\Listeners\EventListener',
       ],
+      'App\Events\Test' => [
+          'App\Listeners\TestListener',
+      ],
       \SocialiteProviders\Manager\SocialiteWasCalled::class => [
           // add your listeners (aka providers) here
           'SocialiteProviders\Weixin\WeixinExtendSocialite@handle'

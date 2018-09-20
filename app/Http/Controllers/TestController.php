@@ -12,7 +12,8 @@ use Illuminate\Http\File;
 class TestController extends Controller {
 
   public function test(SendSmsHandler $sendSms, Request $request) {
-
+    $a=\App\Models\User::first();
+event(new \App\Events\Test($a));
 
     return view('upload');
   }
