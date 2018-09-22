@@ -12,9 +12,11 @@ use Illuminate\Http\File;
 class TestController extends Controller {
 
   public function test(SendSmsHandler $sendSms, Request $request) {
-    $a=\App\Models\User::first();
-event(new \App\Events\Test($a));
-
+    $user=\App\Models\User::first();
+//event(new \App\Events\Test($a));
+    
+    \App\Jobs\TestJob::dispatch($user)->delay(now()->addSeconds(10));
+    
     return view('upload');
   }
 
