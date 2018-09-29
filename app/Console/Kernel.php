@@ -26,6 +26,13 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+                  
+//      $schedule->call(function(){
+//        file_put_contents(public_path().'/1.txt', now()->toDateTimeString()."\r\n\r\n", FILE_APPEND);
+//      })->everyMinute();
+      
+//      $user= \App\Models\User::first();
+//      $schedule->job(new \App\Jobs\TestJob($user))->everyMinute();
     }
 
     /**
