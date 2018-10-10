@@ -15,14 +15,14 @@ class IsAdmin {
    * @return mixed
    */
   public function handle($request, Closure $next) {
-    if (!Auth::check()) {
+    if (!Auth::guard('admin')->check()) {
       return redirect(route('admin.login'));
     }
 
-    if (!Auth::user()->is_admin) {
-      session()->flash('error', '没有权限');
-      return redirect(route('admin.error'));
-    }
+//    if (!Auth::user()->is_admin) {
+//      session()->flash('error', '没有权限');
+//      return redirect(route('admin.error'));
+//    }
     return $next($request);
   }
 
