@@ -24,7 +24,7 @@ Route::resource('user','UserController');
 //Route::post('login','LoginController@store')->name('login.store');
 
 
-Route::group(['namespace'=>'admin','prefix'=>'admin'],function(){
+Route::group(['namespace'=>'Admin','prefix'=>'admin'],function(){
   
   Route::get('login','LoginController@index')->name('admin.login');
   Route::post('login','LoginController@store')->name('admin.login.store');
