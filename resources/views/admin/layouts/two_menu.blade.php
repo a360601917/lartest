@@ -23,7 +23,7 @@
         <p class="sub_nav_list_title">项目</p>
         <ul>
           <li class="sub_nav_list_link"><a href="project.html" >项目列表</a></li>
-          <li class="sub_nav_list_link"><a href="product-custom-table.html" >商品定义表</a></li>
+          <li class="sub_nav_list_link"><a href="<?= route('admin.goods.index')?>" >商品定义表</a></li>
           <li class="sub_nav_list_link"><a href="">库存列表</a></li>
 
 

@@ -1,4 +1,5 @@
 //三联
+$(document).ready(function(){
 resfn()
 function resfn(){
     if($(window).width()<700){
@@ -151,3 +152,4 @@ $("#ID-cons").change(function () {
 })
 
 
+})
