@@ -1,6 +1,6 @@
 <div class="sub_nav_wrap" >
   <div class="blackboard">
-    <div class="blackboard_logo"><img src="img/longlogo.png" alt=""></div>
+    <div class="blackboard_logo"><img src="/img/admin/longlogo.png" alt=""></div>
     <p class="blackboard_title">买家营管理系统</p>
   </div>
 

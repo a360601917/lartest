@@ -1,3 +1,7 @@
+@extends('admin.layouts.app')
+@section('title', '这个首页')
+
+@section('content')
 <div class="right_wrap">
   <div class="right_content">
     <div class="first_nav_list">
@@ -111,7 +115,7 @@
             <tbody>
               <tr>
                 <td>1</td>
-                <td><img src="img/user.jpg" alt=""></td>
+                <td><img src="/img/admin/user.jpg" alt=""></td>
                 <td>2439(Jurlique 茱莉蔻 高效防晒霜SPF 40 PA +++ 100ml（1件）)</td>
                 <td style="text-align: center">$57.00</td>
                 <td>1</td>
@@ -119,7 +123,7 @@
               </tr>
               <tr>
                 <td>2</td>
-                <td><img src="img/user.jpg" alt=""></td>
+                <td><img src="/img/admin/user.jpg" alt=""></td>
                 <td>2439(Jurlique 茱莉蔻 高效防晒霜SPF 40 PA +++ 100ml（1件）)</td>
                 <td style="text-align: center">$57.00</td>
                 <td>1</td>
@@ -127,7 +131,7 @@
               </tr>
               <tr>
                 <td>3</td>
-                <td><img src="img/user.jpg" alt=""></td>
+                <td><img src="/img/admin/user.jpg" alt=""></td>
                 <td>2439(Jurlique 茱莉蔻 高效防晒霜SPF 40 PA +++ 100ml（1件）)</td>
                 <td style="text-align: center">$57.00</td>
                 <td>1</td>
@@ -206,3 +210,4 @@
   });
 
 </script>
+@endsection

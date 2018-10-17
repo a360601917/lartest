@@ -8,7 +8,7 @@
   </div>
   <i class="show_bntss"></i>
   <p class="userselect">
-    <span><img src="img/user.jpg" alt=""></span>
+    <span><img src="/img/admin/user.jpg" alt=""></span>
     <select name="" id="">
       <option value="admin">admin</option>
       <option value="super admin">super</option>
