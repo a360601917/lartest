@@ -129,4 +129,4 @@
 
   </div>
 </div>
-@endsection;
+@endsection

@@ -12,14 +12,10 @@ class AdvertisingTransformer extends TransformerAbstract {
   public function transform(Advertising $advertising) {
     return [
         'id' => $advertising->id,
-        'sku'=>$advertising->sku,
-        'category_id'=>$advertising->category_id,
-        'category_child_id'=>$advertising->category_child_id,
+
         'title'=>$advertising->title,
-        'etitle'=>$advertising->etitle,
         'image'=>$advertising->image,
-        'price'=>$advertising->price,
-        'describe'=>$advertising->describe,
+        'link'=>$advertising->link,
         'sort'=>$advertising->sort,
 
         

@@ -1,17 +1,30 @@
+<script>
+  $(function(){
+    var path="<?=\Request::Path()?>";
+    var path=path.split('/')[1];
+    if(!path || path=='index'){
+      $('#admin').parents('li').click();
+    }else{
+      $('#'+path).parents('li').click();
+    }
+  })
+</script>
 <ul class="nav_list nav_liston nav_listm">
   <li class="special1">
-    <a><i></i><span>主页</span></a>
+    <a><i></i><span id="admin">主页</span></a>
     <ul class="subnavlist">
       <li class="sub_nav_list_link"><a href="index.html" class="speciallink" >统计图表</a></li>
     </ul>
   </li>
   <li>
-    <a><i></i><span>项目</span></a>
+    <a><i></i><span id="goods">项目2</span></a>
+    <!--
     <ul class="subnavlist">
-      <li class="sub_nav_list_link"><a href="project.html" >项目列表</a></li>
+      <li class="sub_nav_list_link"><a href="project.html" >项目列表2</a></li>
       <li class="sub_nav_list_link"><a href="product-custom-table.html" >商品定义表</a></li>
       <li class="sub_nav_list_link"><a href="">库存列表</a></li>
     </ul>
+    -->
   </li>
   <li>
     <a><i></i><span>订单</span></a>

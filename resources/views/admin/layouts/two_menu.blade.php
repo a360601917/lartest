@@ -8,7 +8,7 @@
 
     <li style="display: list-item">
       <div>
-        <p class="sub_nav_list_title" id="sub_nav_list_title">主页</p>
+        <p class="sub_nav_list_title" id="sub_nav_list_title"><a href="<?=route('admin.index')?>">主页</a></p>
         <ul>
           <li class="sub_nav_list_link"><a href="index.html" class="speciallink">统计图表</a></li>
 
@@ -20,7 +20,7 @@
     <li>
 
       <div>
-        <p class="sub_nav_list_title">项目</p>
+        <p class="sub_nav_list_title">项目1</p>
         <ul>
           <li class="sub_nav_list_link"><a href="project.html" >项目列表</a></li>
           <li class="sub_nav_list_link"><a href="<?= route('admin.goods.index')?>" >商品定义表</a></li>

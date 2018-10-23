@@ -11,6 +11,7 @@ use App\Models\Goods;
 class GoodsController extends Controller {
 
   public function index(GoodsRequest $request) {
+    sleep(10);
     $limit = $request->limit ?: 20;
     $goodss = Goods::paginate($limit);
     return $this->response()->paginator($goodss, new GoodsTransformer);
