@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\Auth;
 
 use Illuminate\Http\Request;
 //use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\VerifyCodeRequest;
 use App\Handlers\SendSmsHandler;
 use Illuminate\Support\Facades\Cache;
+use App\Http\Controllers\Api\Controller;
 
 class VerifyCodeController extends Controller {
 

@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\Category;
 
 use Illuminate\Http\Request;
 //use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Http\Requests\Api\CategoryRequest;
 use App\Transformers\CategoryTransformer;
+use App\Http\Controllers\Api\Controller;
 
 class CategoryController extends Controller
 {

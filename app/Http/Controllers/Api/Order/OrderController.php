@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\Order;
 
 use Illuminate\Http\Request;
 use App\Models\Order;
@@ -10,6 +10,7 @@ use App\Models\Goods;
 use App\Transformers\OrderTransformer;
 use App\Http\Requests\Api\OrderRequest;
 use App\Handlers\JsonParamCheck;
+use App\Http\Controllers\Api\Controller;
 
 //use App\Http\Controllers\Controller;
 

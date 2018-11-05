@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\Cart;
 
 use Illuminate\Http\Request;
 //use App\Http\Controllers\Controller;
@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Transformers\CartTransformer;
 use App\Http\Requests\Api\CartRequest;
 use App\Models\Goods;
+use App\Http\Controllers\Api\Controller;
 
 class CartController extends Controller {
 

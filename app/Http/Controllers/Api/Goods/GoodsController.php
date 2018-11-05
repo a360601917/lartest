@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\Goods;
 
 use Illuminate\Http\Request;
 //use App\Http\Controllers\Controller;
 use App\Transformers\GoodsTransformer;
 use App\Http\Requests\Api\GoodsRequest;
 use App\Models\Goods;
+use App\Http\Controllers\Api\Controller;
 
 class GoodsController extends Controller {
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\Auth;
 
 use Illuminate\Http\Request;
 //use App\Http\Controllers\Controller;
@@ -8,6 +8,7 @@ use Auth;
 use App\Http\Requests\Api\AuthorizationsRequest;
 use App\Http\Requests\Api\SocialAuthorizationRequest;
 use App\Models\User;
+use App\Http\Controllers\Api\Controller;
 
 class AuthorizationsController extends Controller {
 

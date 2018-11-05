@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\User;
 
 use Illuminate\Http\Request;
 //use App\Http\Controllers\Controller;
@@ -8,6 +8,7 @@ use App\Http\Requests\Api\UserRequest;
 use Illuminate\Support\Facades\Cache;
 use App\Models\User;
 use App\Transformers\UserTransformer;
+use App\Http\Controllers\Api\Controller;
 
 class UserController extends Controller {
 

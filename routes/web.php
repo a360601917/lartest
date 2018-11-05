@@ -26,11 +26,11 @@ Route::resource('user','UserController');
 
 Route::group(['namespace'=>'Admin','prefix'=>'admin'],function(){
   
-  Route::get('login','LoginController@index')->name('admin.login');
-  Route::post('login','LoginController@store')->name('admin.login.store');
-  Route::delete('login','LoginController@destroy')->name('admin.login.destroy');
+  Route::get('login','Auth\LoginController@index')->name('admin.login');
+  Route::post('login','Auth\LoginController@store')->name('admin.login.store');
+  Route::delete('login','Auth\LoginController@destroy')->name('admin.login.destroy');
   
-  Route::get('goods','GoodsController@index')->name('admin.goods.index');
+  Route::get('goods','Goods\GoodsController@index')->name('admin.goods.index');
   //没有权限
   Route::get('error',function(){
     return view('admin.layouts.error');
